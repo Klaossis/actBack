@@ -8,18 +8,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.act2.act2.modelos.Producto;
-import com.act2.act2.repositories.ProductoRepository;
+import com.act2.act2.services.ProductoService;
 
 @RestController
 @RequestMapping("/venta")
 public class VentaController {
     
     @Autowired
-    ProductoRepository productoRepository;
+    ProductoService productoService;
 
     @GetMapping("/producto")
     public ArrayList<Producto> arrayproducto(){
-        return productoRepository.obtenerProductos();
+        return productoService.getAllProducto();
     }
     
 }
